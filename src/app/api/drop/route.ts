@@ -2,6 +2,32 @@ import { PublicKey } from "@solana/web3.js";
 
 const SOLANA_RPC_URL = "https://api.devnet.solana.com";
 
+const ERROR_HTML = `<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta property="og:title" content="SolDrop Frame by devvivek" />
+    <meta property="fc:frame" content="vNext" />
+    <meta property="fc:frame:image" content="https://sol-drop-frame.vercel.app/error.jpg" />
+    <meta
+    property="og:image"
+    content="https://sol-drop-frame.vercel.app/error.jpg"
+  />
+    <meta
+      property="fc:frame:button:1"
+      content="Retry Airdrop"
+    />
+    <meta
+      name="fc:frame:post_url"
+      content="https://sol-drop-frame.vercel.app"
+    />
+  </head>
+  <body>
+      <h1>Looks like something went wrong</h1>
+  </body> 
+</html>`;
+
 export async function POST(req: Request) {
   const { untrustedData } = await req.json();
   try {
@@ -23,35 +49,12 @@ export async function POST(req: Request) {
         "Content-Type": "application/json",
       },
     });
+    //Error handling
     if (!response.ok) {
-      return new Response(
-        `<!DOCTYPE html>
-        <html>
-          <head>
-            <meta charset="utf-8" />
-            <meta name="viewport" content="width=device-width" />
-            <meta property="og:title" content="SolDrop Frame by devvivek" />
-            <meta property="fc:frame" content="vNext" />
-            <meta property="fc:frame:image" content="https://sol-drop-frame.vercel.app/success.jpg" />
-            <meta
-            property="og:image"
-            content="https://sol-drop-frame.vercel.app/initial.jpg"
-          />
-            <meta
-              property="fc:frame:button:1"
-              content="Retry Airdrop"
-            />
-            <meta
-              name="fc:frame:post_url"
-              content="https://sol-drop-frame.vercel.app"
-            />
-          </head>
-          <body>
-              <h1>Looks like something went wrong</h1>
-          </body> 
-        </html>`,
-        { headers: { "Content-Type": "text/html" }, status: 200 }
-      );
+      return new Response(ERROR_HTML, {
+        headers: { "Content-Type": "text/html" },
+        status: 200,
+      });
     }
     return new Response(
       `<!DOCTYPE html>
@@ -64,7 +67,7 @@ export async function POST(req: Request) {
           <meta property="fc:frame:image" content="https://sol-drop-frame.vercel.app/success.jpg" />
           <meta
           property="og:image"
-          content="https://sol-drop-frame.vercel.app/initial.jpg"
+          content="https://sol-drop-frame.vercel.app/success.jpg"
         />
           <meta
             property="fc:frame:button:1"
@@ -112,6 +115,9 @@ export async function POST(req: Request) {
         );
       }
     }
-    return new Response("Failed to airdrop", { status: 400 });
+    return new Response(ERROR_HTML, {
+      headers: { "Content-Type": "text/html" },
+      status: 200,
+    });
   }
 }
