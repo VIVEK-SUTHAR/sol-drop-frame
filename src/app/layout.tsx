@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="fc:frame" content="vNext" />
-        <meta name="fc:frame:post_url" content="/api/drop" />
+        <meta name="fc:frame:post_url" content="https://sol-drop-frame.vercel.app/api/drop" />
         <meta name="fc:frame:button:1" content="Get 1 Devnet Sol " />
         <meta name="fc:frame:input:text" content="Enter your Solana address" />
       </head>
