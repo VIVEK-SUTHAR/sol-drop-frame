@@ -1,4 +1,3 @@
-import { getSSLHubRpcClient, Message } from "@farcaster/hub-nodejs";
 
 const SOLANA_RPC_URL = "https://api.devnet.solana.com";
 
@@ -35,6 +34,11 @@ export async function POST(req: Request) {
           <meta name="viewport" content="width=device-width" />
           <meta property="og:title" content="SolDrop Frame by devvivek" />
           <meta property="fc:frame" content="vNext" />
+          <meta property="fc:frame:image" content="https://sol-drop-frame.vercel.app/success.jpg" />
+          <meta
+          property="og:image"
+          content="https://sol-drop-frame.vercel.app/initial.jpg"
+        />
           <meta
             property="fc:frame:button:1"
             content="Airdrop Successful"
