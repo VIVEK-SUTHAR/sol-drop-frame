@@ -15,6 +15,7 @@ const ERROR_HTML = `<!DOCTYPE html>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <meta property="og:title" content="SolDrop Frame by devvivek" />
+    <meta property="of:accepts:xmtp" content="2024-02-01" />
     <meta property="fc:frame" content="vNext" />
     <meta property="of:version" content="vNext" />
     <meta property="fc:frame:image" content="https://sol-drop-frame.vercel.app/error.jpg" />
@@ -52,6 +53,9 @@ const SUCCESS_HTML = `<!DOCTYPE html>
     <meta name="viewport" content="width=device-width" />
     <meta property="og:title" content="SolDrop Frame by devvivek" />
     <meta property="fc:frame" content="vNext" />
+    <meta property="of:accepts:xmtp" content="2024-02-01" />
+
+
     <meta property="of:version" content="vNext" />
     <meta property="fc:frame:image" content="https://sol-drop-frame.vercel.app/success.jpg" />
     <meta property="of:image" content="https://sol-drop-frame.vercel.app/success.jpg" />
@@ -84,6 +88,9 @@ const INVALID_ADDRESS_HTML = `<!DOCTYPE html>
     <meta name="viewport" content="width=device-width" />
     <meta property="og:title" content="SolDrop Frame by devvivek" />
     <meta property="of:version" content="vNext" />
+    <meta property="of:accepts:xmtp" content="2024-02-01" />
+
+
     <meta property="fc:frame" content="vNext" />
     <meta property="fc:frame:image" content="https://sol-drop-frame.vercel.app/invalid.jpg" />
     <meta property="of:image" content="https://sol-drop-frame.vercel.app/invalid.jpg" />
